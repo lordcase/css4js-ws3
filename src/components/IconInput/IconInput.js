@@ -10,6 +10,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   const iconSize = size === "small" ? 16 : 21;
   return (
     <InputWrapper className={size}>
+      <VisuallyHidden>{label}</VisuallyHidden>
       <Icon id={icon} size={iconSize} className="icon" />
       <input type="text" placeholder={placeholder} size={iconSize} />
     </InputWrapper>
@@ -19,6 +20,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
 export default IconInput;
 
 const InputWrapper = styled.div`
+  position: relative;
   & .icon {
     position: absolute;
     color: ${COLORS.gray700};
